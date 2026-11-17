@@ -19,19 +19,19 @@ public class Buzzer
     public void Connect(CoffeeBar bar)
     {
         // TODO: Part B, demo
-        throw new NotImplementedException();
+        bar.OrderReady += OnOrderReady;
     }
 
     // Unsubscribe with the same method that subscribed.
     public void Disconnect(CoffeeBar bar)
     {
         // TODO: Part B, demo
-        throw new NotImplementedException();
+        bar.OrderReady -= OnOrderReady;
     }
 
     private void OnOrderReady(object? sender, OrderEventArgs e)
     {
         // TODO: Part B, demo
-        throw new NotImplementedException();
+        messages.Add($"Buzz: {e.Order.Customer}, your {e.Order.Drink} is ready.");
     }
 }
